@@ -6,14 +6,20 @@ public class Main {
     static void main() {
         WeatherData weatherData = new WeatherData();
         Observer displayTemprature = new DisplayTemprature();
+        Observer displayHumadiy = new DisplayHumadity();
+        Observer displayPressure = new DisplayPressure();
 
         weatherData.addObserver(displayTemprature);
+        weatherData.addObserver(displayHumadiy);
+        weatherData.addObserver(displayPressure);
 
         weatherData.setTemperature(20.5f);
 
         weatherData.setHumidity(50.5f);
 
         weatherData.setPressure(1013.25f);
+
+        weatherData.removeObserver(displayPressure);
 
         weatherData.notifyObservers(weatherData.getTemperature(), weatherData.getHumidity(), weatherData.getPressure());
 
