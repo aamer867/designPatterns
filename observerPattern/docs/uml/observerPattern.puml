@@ -1,14 +1,11 @@
 @startuml
 abstract class Subject {
 
-    - temprature
-    - preassure
-    - humadity
     - observer[] observers
 
     + void addObserver(Observer o)
     + void removeObserver(Observer o)
-    + void notifyObservers()
+    + void notifyObservers(float temprature, float humadity, float preassure)
 }
 
 interface Observer{

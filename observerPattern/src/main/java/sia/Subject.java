@@ -5,34 +5,6 @@ import java.util.List;
 
 public abstract class Subject {
 
-    private float temperature;
-    private float humidity;
-    private float pressure;
-
-    public float getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(float temperature) {
-        this.temperature = temperature;
-    }
-
-    public float getHumidity() {
-        return humidity;
-    }
-
-    public void setHumidity(float humidity) {
-        this.humidity = humidity;
-    }
-
-    public float getPressure() {
-        return pressure;
-    }
-
-    public void setPressure(float pressure) {
-        this.pressure = pressure;
-    }
-
     private List<Observer> observers = new ArrayList<>();
 
     public void addObserver(Observer observer) {
@@ -43,7 +15,7 @@ public abstract class Subject {
         observers.remove(observer);
     }
 
-    public void notifyObservers() {
+    public void notifyObservers(float temperature, float humidity, float pressure) {
         for (Observer observer : observers) {
             observer.update(temperature, humidity, pressure);
         }
