@@ -25,28 +25,19 @@ class WeatherData {
 Subject --> Observer
 WeatherData --|> Subject
 
-class displayTemprature {
+class displayData {
     - temprature
     - preassure
     - humadity
 }
-displayTemprature --|> displayObserver
-displayTemprature --|> Observer
+displayData --|> displayObserver
+displayData --|> Observer
 
-class displayPreassure {
-    - temprature
-    - preassure
-    - humadity
+class StatisticsDisplay {
+    - list<float> tempratureData
+    - list<float> humadityData
+    - list<float> preassureData
 }
-displayPreassure --|> displayObserver
-displayPreassure --|> Observer
-
-class displayHumadity {
-    - temprature
-    - preassure
-    - humadity
-}
-displayHumadity --|> displayObserver
-displayHumadity --|> Observer
-
+StatisticsDisplay --|> displayObserver
+StatisticsDisplay --|> Observer
 @enduml

@@ -5,23 +5,18 @@ package sia;
 public class Main {
     static void main() {
         WeatherData weatherData = new WeatherData();
-        Observer displayTemprature = new DisplayTemprature();
-        Observer displayHumadiy = new DisplayHumadity();
-        Observer displayPressure = new DisplayPressure();
+
+        Observer displayTemprature = new DisplayData();
+
+        Observer statisticsDisplay = new StatisticsDisplay();
 
         weatherData.addObserver(displayTemprature);
-        weatherData.addObserver(displayHumadiy);
-        weatherData.addObserver(displayPressure);
 
-        weatherData.setTemperature(20.5f);
+        weatherData.addObserver(statisticsDisplay);
 
-        weatherData.setHumidity(50.5f);
+        weatherData.setMeasurements(82, 70, 29.2f);
 
-        weatherData.setPressure(1013.25f);
-
-        weatherData.removeObserver(displayPressure);
-
-        weatherData.notifyObservers(weatherData.getTemperature(), weatherData.getHumidity(), weatherData.getPressure());
+        weatherData.setMeasurements(80, 65, 30.4f);
 
     }
 }

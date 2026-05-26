@@ -28,4 +28,12 @@ public class WeatherData extends Subject {
     public void setPressure(float pressure) {
         this.pressure = pressure;
     }
+
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+
+        super.notifyObservers(temperature, humidity, pressure);
+    }
 }

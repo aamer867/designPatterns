@@ -1,6 +1,6 @@
 package sia;
 
-public class DisplayHumadity implements DisplayObserver, Observer {
+public class DisplayData implements DisplayObserver, Observer{
     private float temperature;
     private float humidity;
     private float pressure;
@@ -37,6 +37,8 @@ public class DisplayHumadity implements DisplayObserver, Observer {
     }
 
     public void display() {
-        System.out.printf("Humadity: %f", humidity);
+        System.out.println("Current conditions: " + temperature
+                + "F degrees and " + humidity + "% humidity");
     }
+
 }
