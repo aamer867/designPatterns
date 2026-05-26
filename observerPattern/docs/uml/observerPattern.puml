@@ -1,5 +1,9 @@
 @startuml
 abstract class Subject {
+
+    - temprature
+    - preassure
+    - humadity
     - observer[] observers
 
     + void addObserver(Observer o)

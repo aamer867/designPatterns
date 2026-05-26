@@ -1,10 +1,6 @@
 package sia;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public abstract class Subject {
-
+public class DisplayTemprature implements DisplayObserver, Observer{
     private float temperature;
     private float humidity;
     private float pressure;
@@ -33,20 +29,15 @@ public abstract class Subject {
         this.pressure = pressure;
     }
 
-    private List<Observer> observers = new ArrayList<>();
-
-    public void addObserver(Observer observer) {
-        observers.add(observer);
+    public void update(float temperature, float humidity, float pressure) {
+        setTemperature(temperature);
+        setHumidity(humidity);
+        setPressure(pressure);
+        display();
     }
 
-    public void removeObserver(Observer observer) {
-        observers.remove(observer);
-    }
-
-    public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update(temperature, humidity, pressure);
-        }
+    public void display() {
+        System.out.printf("Temperature: %f", temperature);
     }
 
 }
