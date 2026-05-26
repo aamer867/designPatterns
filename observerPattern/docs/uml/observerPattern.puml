@@ -1,0 +1,51 @@
+@startuml
+abstract class Subject {
+    - observer[] observers
+
+    + void addObserver(Observer o)
+    + void removeObserver(Observer o)
+    + void notifyObservers()
+}
+
+interface Observer{
+    + void update()
+}
+
+interface displayObserver {
+    + void display()
+}
+
+class WeatherData {
+    - temprature
+    - preassure
+    - humadity
+}
+
+Subject --> Observer
+WeatherData --|> Subject
+
+class displayTemprature {
+    - temprature
+    - preassure
+    - humadity
+}
+displayTemprature --|> displayObserver
+displayTemprature --|> Observer
+
+class displayPreassure {
+    - temprature
+    - preassure
+    - humadity
+}
+displayPreassure --|> displayObserver
+displayPreassure --|> Observer
+
+class displayHumadity {
+    - temprature
+    - preassure
+    - humadity
+}
+displayHumadity --|> displayObserver
+displayHumadity --|> Observer
+
+@enduml
