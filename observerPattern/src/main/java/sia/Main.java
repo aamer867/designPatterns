@@ -6,11 +6,11 @@ public class Main {
     static void main() {
         WeatherData weatherData = new WeatherData();
 
-        Observer displayTemprature = new DisplayData();
+        Observer displayTemperature = new DisplayData();
 
         Observer statisticsDisplay = new StatisticsDisplay();
 
-        weatherData.addObserver(displayTemprature);
+        weatherData.addObserver(displayTemperature);
 
         weatherData.addObserver(statisticsDisplay);
 
