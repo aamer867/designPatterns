@@ -6,7 +6,7 @@ public class Milk extends CondimentDecorator {
     }
     @Override
     public String getDescription() {
-        return "Milk";
+        return super.getBeverage().getDescription() + "Milk ";
     }
 
     @Override
