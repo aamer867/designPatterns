@@ -1,0 +1,6 @@
+@startuml
+class SimplePizzaFactory {
+    - Product product;
+    + getProduct(String type): Product
+}
+@enduml
