@@ -1,0 +1,49 @@
+@startuml
+
+class PizzaStore {
+    - SimplePizzaFactory simpleFactory
+    + orderPizza(String type): Pizza
+}
+
+class SimplePizzaFactory {
+    + createPizza(String type)): Pizza
+}
+
+class Pizza {
+    + prepare(): void
+    + cut(): void
+    + bake(): void
+    + box(): void
+}
+
+PizzaStore --> SimplePizzaFactory
+SimplePizzaFactory ..> Pizza: creates
+CheesePizza--|>Pizza
+PipproniPizza--|>Pizza
+GreekPizza--|>Pizza
+
+
+class Store {
+    - SimpleFactory factory
+    + methodA(String type): Product
+}
+
+class SimpleFactory {
+    + CreationMethod(String type): Product
+}
+
+class Product {
+    + method1(): void
+    + method2(): void
+    + method3(): void
+    + method4(): void
+}
+
+Store --> SimpleFactory
+SimpleFactory ..> Product : creates
+Product1 --|> Product
+Product2 --|> Product
+Product3 --|> Product
+Product4 --|> Product
+
+@enduml
