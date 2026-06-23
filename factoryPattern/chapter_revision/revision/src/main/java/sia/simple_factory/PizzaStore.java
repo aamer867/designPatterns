@@ -1,8 +1,4 @@
-package sia.simple_factory_method;
-
-import sia.simple_factory_method.pizaa_types.CheesePizza;
-import sia.simple_factory_method.pizaa_types.GreekPizza;
-import sia.simple_factory_method.pizaa_types.PepperoniPizza;
+package sia.simple_factory;
 
 public class PizzaStore {
     /**

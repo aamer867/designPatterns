@@ -1,7 +1,7 @@
 package sia;
 
-import sia.simple_factory_method.PizzaStore;
-import sia.simple_factory_method.SimplePizzaFactory;
+import sia.simple_factory.PizzaStore;
+import sia.simple_factory.SimplePizzaFactory;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

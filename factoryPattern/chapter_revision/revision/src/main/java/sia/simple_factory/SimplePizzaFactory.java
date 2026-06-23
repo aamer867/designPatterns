@@ -1,8 +1,8 @@
-package sia.simple_factory_method;
+package sia.simple_factory;
 
-import sia.simple_factory_method.pizaa_types.CheesePizza;
-import sia.simple_factory_method.pizaa_types.GreekPizza;
-import sia.simple_factory_method.pizaa_types.PepperoniPizza;
+import sia.simple_factory.pizaa_types.CheesePizza;
+import sia.simple_factory.pizaa_types.GreekPizza;
+import sia.simple_factory.pizaa_types.PepperoniPizza;
 
 public class SimplePizzaFactory {
 

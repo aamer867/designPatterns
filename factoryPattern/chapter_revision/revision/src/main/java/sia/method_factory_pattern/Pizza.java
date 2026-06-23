@@ -1,4 +1,4 @@
-package sia.simple_factory_method;
+package sia.method_factory_pattern;
 
 public abstract class Pizza {
     public void prepare(){
