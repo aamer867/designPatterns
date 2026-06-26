@@ -1,0 +1,39 @@
+@startuml
+
+abstract class PizzaStore {
+    + createPizza(String type): Pizza <<abstract>>
+    + orderPizza(String type): Pizza
+}
+abstract class Pizza {
+    + prepare(): void
+    + cut(): void
+    + bake(): void
+    + box(): void
+}
+class NYPizzaStore {
+    + createPizza()
+}
+class NYCheesePizza {
+}
+NYPizzaStore--|>PizzaStore
+NYCheesePizza--|>Pizza
+NYPizzaStore..>>NYCheesePizza: <<creates>>
+
+abstract class Store {
+    + methodA(String type): Pizza <<abstract>>
+    + methodB(String type): Pizza
+}
+abstract class Product {
+    + method1(): void
+    + method2(): void
+}
+class ConcreteStore {
+    + methodA()
+}
+class ConcreteProduct {
+}
+ConcreteStore--|>Store
+ConcreteProduct--|>Product
+ConcreteStore..>>ConcreteProduct: <<creates>>
+
+@enduml

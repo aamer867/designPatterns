@@ -31,5 +31,9 @@ public class Main {
         chicagoPizzaStore.orderPizza("pepperoni");
         chicagoPizzaStore.orderPizza("greek");
 
+        // Testing of Abstract Factory:
+        sia.abstract_factory.NYPizzaStore nyPizzaStoreAbstractFactory = new sia.abstract_factory.NYPizzaStore();
+        nyPizzaStoreAbstractFactory.orderPizza("cheese");
+
     }
 }
