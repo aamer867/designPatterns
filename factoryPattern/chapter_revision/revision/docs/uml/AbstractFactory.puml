@@ -1,0 +1,71 @@
+@startuml
+left to right direction
+Interface AbstractFactory {
+    createProductA(): InterfaceProductA <<abstract>>
+    createProductB(): InterfaceProductB <<abstract>>
+    createProductC(): InterfaceProductC <<abstract>>
+    createProductD(): InterfaceProductD <<abstract>>
+    createProductE(): InterfaceProductE <<abstract>>
+}
+
+class ConcreteFactory1 {
+    createProductA(): InterfaceProductA
+    createProductB(): InterfaceProductB
+    createProductC(): InterfaceProductC
+    createProductD(): InterfaceProductD
+    createProductE(): InterfaceProductE
+}
+
+class ConcreteFactory2 {
+    createProductA(): InterfaceProductA
+    createProductB(): InterfaceProductB
+    createProductC(): InterfaceProductC
+    createProductD(): InterfaceProductD
+    createProductE(): InterfaceProductE
+}
+
+AbstractFactory <|.. ConcreteFactory1
+AbstractFactory <|.. ConcreteFactory2
+
+class Client {
+}
+Client --> AbstractFactory
+interface InterfaceProductA {}
+InterfaceProductA <|.. productA1
+InterfaceProductA <|.. productA2
+
+interface InterfaceProductB {}
+InterfaceProductB <|.. productB1
+InterfaceProductB <|.. productB2
+
+interface InterfaceProductC {}
+InterfaceProductC <|.. productC1
+InterfaceProductC <|.. productC2
+
+interface InterfaceProductD {}
+InterfaceProductD <|.. productD1
+InterfaceProductD <|.. productD2
+
+interface InterfaceProductE {}
+InterfaceProductE <|.. productE1
+InterfaceProductE <|.. productE2
+
+Client -->> InterfaceProductA
+Client -->> InterfaceProductB
+Client -->> InterfaceProductC
+Client -->> InterfaceProductD
+Client -->> InterfaceProductE
+
+ConcreteFactory1 ..>> productA1: <<creates>>
+ConcreteFactory1 ..>> productB1: <<creates>>
+ConcreteFactory1 ..>> productC1: <<creates>>
+ConcreteFactory1 ..>> productD1: <<creates>>
+ConcreteFactory1 ..>> productE1: <<creates>>
+
+ConcreteFactory2 ..>> productA2: <<creates>>
+ConcreteFactory2 ..>> productB2: <<creates>>
+ConcreteFactory2 ..>> productC2: <<creates>>
+ConcreteFactory2 ..>> productD2: <<creates>>
+ConcreteFactory2 ..>> productE2: <<creates>>
+
+@enduml
