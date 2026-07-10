@@ -1,0 +1,53 @@
+@startuml
+interface Light {}
+class CeilingLight {
+    + on(): void
+    + off(): void
+}
+CeilingLight ..|> Light
+
+class RemoteControl {
+    - Command [] onCommands;
+    - Command [] offCommands;
+    - Command undoCommand;
+
+    + setCommandToSlot(int slot, Command onCommand, Command offCommand): void
+    + onButtonClicked(int slot): void
+    + offButtonClicked(int slot): void
+    + undoButtonClicked(int slot): void
+}
+
+interface Command {
+    + execute(): void
+    + undo(): Command
+}
+RemoteControl ..> Command
+class LightOnCommand {
+    - Light light
+    + execute(): void
+    + undo(): Command
+}
+LightOnCommand ..|> Command
+LightOnCommand ..> Light
+class LightOffCommand {
+    - Light light
+    + execute(): void
+    + undo(): Command
+}
+LightOffCommand ..|> Command
+LightOffCommand ..> Light
+interface Fan {}
+class FanSpeedCommand {
+    - Fan fan
+    - int final HIGH
+    - int final MEDIUM
+    - int final LOW
+
+    + execute(): void
+    + undo(): Command
+    + getSpeed(): int
+}
+
+FanSpeedCommand ..|> Command
+FanSpeedCommand ..> Fan
+@enduml

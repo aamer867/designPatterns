@@ -1,0 +1,17 @@
+What is the Command Pattern?
+Let us take, for example, the following scenario:
+    1. We have a lot of buttons.
+    2. We have many different actions that can be performed on these buttons.
+    3. Every button, when it is clicked, may have different actions, like opening a light,
+                                                                          closing a door,
+                                                                          increasing the temperature,
+                                                                          decreasing the temperature,
+                                                                          etc.
+    4. We want to avoid having a lot of if-else statements in our code, like if (button.isLight()) { light.open();},
+    or if (button.isDoor()) { door.close();}.
+    5. We want to add the Undo functionality.
+So, how to solve this problem?
+    1. If every button has a method execute(),
+    2. The remote control does not know anything about what each button does,
+    3. When the button is clicked,
+    4. The remote control calls the execute() method of the button.
