@@ -37,15 +37,25 @@ class LightOffCommand {
 LightOffCommand ..|> Command
 LightOffCommand ..> Light
 interface Fan {}
-class FanSpeedCommand {
-    - Fan fan
+class CeilingFan {
     - int final HIGH
     - int final MEDIUM
     - int final LOW
+    - int speed
+
+    + high(): void
+    + medium(): void
+    + low(): void
+    + off(): void
+    + getSpeed(): int
+}
+CeilingFan ..|> Fan
+class FanSpeedCommand {
+    - Fan fan
+    - int prevSpeed
 
     + execute(): void
     + undo(): Command
-    + getSpeed(): int
 }
 
 FanSpeedCommand ..|> Command
